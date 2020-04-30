@@ -4,7 +4,7 @@
             <v-col cols="12">
                 <video autoplay width="100%" height="720" :src="video"></video>
             </v-col>
-            <v-col cols="12" style="display: flex; justify-content: space-around">
+            <v-col cols="12" style="display: flex; justify-content: space-around; flex-wrap: wrap">
                 <v-btn @click="changeVideo">Disassemble</v-btn>
                 <v-btn
                         @click="changeYellow"
@@ -26,7 +26,6 @@
     </v-container>
 </template>
 <script>
-    import stock from '../src/assets/stock.mp4'
     import disassemble from '../src/assets/disassemble.mp4'
     import yellow from '../src/assets/yellow.mp4'
     import yellow_disassemble from '../src/assets/yellow_disassemble.mp4'
@@ -39,7 +38,7 @@
         name: 'App',
         data() {
             return {
-                video: stock,
+                video: null,
                 yellow: "Yellow",
                 green: "Green",
                 blue: "Blue"
@@ -85,6 +84,7 @@
     background-position: center;
     background-size: cover;
     height: 100vh !important;
+    font-family: STARWARS,serif !important;
 }
 
 </style>
