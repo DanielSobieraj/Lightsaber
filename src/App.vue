@@ -72,7 +72,8 @@
                 green: "Green",
                 blue: "Blue",
                 purple: "Purple",
-                red: "Red"
+                red: "Red",
+                disassemble: "Disassemble"
             }
         },
         methods: {
@@ -83,47 +84,47 @@
                 this.video = ""
             },
             changeYellow() {
-                if (this.yellow == "disassemble") {
+                if (this.yellow == this.disassemble) {
                     this.yellow = "yellow";
                     this.video = yellow_disassemble;
                 } else {
-                    this.yellow = "disassemble";
+                    this.yellow = this.disassemble;
                     this.video = yellow;
                 }
             },
             changeGreen() {
-                if (this.green == "disassemble") {
+                if (this.green == this.disassemble) {
                     this.green = "green";
                     this.video = green_disassemble;
                 } else {
-                    this.green = "disassemble";
+                    this.green = this.disassemble;
                     this.video = green;
                 }
             },
             changeBlue() {
-                if (this.blue == "disassemble") {
+                if (this.blue == this.disassemble) {
                     this.blue = "blue";
                     this.video = blue_disassemble;
                 } else {
-                    this.blue = "disassemble";
+                    this.blue = this.disassemble;
                     this.video = blue;
                 }
             },
             changePurple() {
-                if (this.purple == "disassemble") {
+                if (this.purple == this.disassemble) {
                     this.purple = "purple";
                     this.video = purple_disassemble;
                 } else {
-                    this.purple = "disassemble";
+                    this.purple = this.disassemble;
                     this.video = purple;
                 }
             },
             changeRed() {
-                if (this.red == "disassemble") {
+                if (this.red == this.disassemble) {
                     this.red = "red";
                     this.video = red_disassemble;
                 } else {
-                    this.red = "disassemble";
+                    this.red = this.disassemble;
                     this.video = red;
                 }
             }
