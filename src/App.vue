@@ -1,10 +1,21 @@
 <template>
     <v-container fluid fill-height class="container">
         <v-row>
-            <v-col cols="12">
-                <video autoplay width="100%" height="720" :src="video"></video>
+            <v-col cols="12" style="display: flex; justify-content: center">
+                <video  autoplay width="100%" height="720px" :src="video"></video>
             </v-col>
-            <v-col cols="12" style="display: flex; justify-content: space-around; flex-wrap: wrap">
+            <v-col cols="12" class="flex-md-column" style="display: flex; justify-content: space-around; flex-wrap: wrap">
+                <v-btn
+                        @click="changeShow"
+                >
+                    Show
+                </v-btn>
+                <v-btn
+                        @click="changeOff"
+                        dark
+                >
+                    Turn off
+                </v-btn>
                 <v-btn
                         @click="changeYellow"
                         color=rgb(255,255,0)
@@ -35,6 +46,8 @@
     </v-container>
 </template>
 <script>
+    import show from '../src/assets/show.mp4'
+
     import yellow from '../src/assets/yellow.mp4'
     import yellow_disassemble from '../src/assets/yellow_disassemble.mp4'
 
@@ -63,6 +76,12 @@
             }
         },
         methods: {
+            changeShow() {
+                this.video = show
+            },
+            changeOff() {
+                this.video = ""
+            },
             changeYellow() {
                 if (this.yellow == "disassemble") {
                     this.yellow = "yellow";
