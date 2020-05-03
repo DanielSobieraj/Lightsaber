@@ -5,7 +5,6 @@
                 <video autoplay width="100%" height="720" :src="video"></video>
             </v-col>
             <v-col cols="12" style="display: flex; justify-content: space-around; flex-wrap: wrap">
-                <v-btn @click="changeVideo">Disassemble</v-btn>
                 <v-btn
                         @click="changeYellow"
                         color=rgb(255,255,0)
@@ -21,18 +20,35 @@
                        dark>
                     {{ blue }}
                 </v-btn>
+                <v-btn @click="changePurple"
+                       color=rgb(128,0,128)
+                       dark>
+                    {{ purple }}
+                </v-btn>
+                <v-btn @click="changeRed"
+                       color=rgb(255,0,0)
+                       dark>
+                    {{ red }}
+                </v-btn>
             </v-col>
         </v-row>
     </v-container>
 </template>
 <script>
-    import disassemble from '../src/assets/disassemble.mp4'
     import yellow from '../src/assets/yellow.mp4'
     import yellow_disassemble from '../src/assets/yellow_disassemble.mp4'
+
     import green from '../src/assets/green.mp4'
     import green_disassemble from '../src/assets/green_disassemble.mp4'
+
     import blue from '../src/assets/blue.mp4'
     import blue_disassemble from '../src/assets/blue_disassemble.mp4'
+
+    import purple from '../src/assets/purple.mp4'
+    import purple_disassemble from '../src/assets/purple_disassemble.mp4'
+
+    import red from '../src/assets/red.mp4'
+    import red_disassemble from '../src/assets/red_disassemble.mp4'
 
     export default {
         name: 'App',
@@ -41,13 +57,12 @@
                 video: null,
                 yellow: "Yellow",
                 green: "Green",
-                blue: "Blue"
+                blue: "Blue",
+                purple: "Purple",
+                red: "Red"
             }
         },
         methods: {
-            changeVideo() {
-                this.video = disassemble;
-            },
             changeYellow() {
                 if (this.yellow == "disassemble") {
                     this.yellow = "yellow";
@@ -73,6 +88,24 @@
                 } else {
                     this.blue = "disassemble";
                     this.video = blue;
+                }
+            },
+            changePurple() {
+                if (this.purple == "disassemble") {
+                    this.purple = "purple";
+                    this.video = purple_disassemble;
+                } else {
+                    this.purple = "disassemble";
+                    this.video = purple;
+                }
+            },
+            changeRed() {
+                if (this.red == "disassemble") {
+                    this.red = "red";
+                    this.video = red_disassemble;
+                } else {
+                    this.red = "disassemble";
+                    this.video = red;
                 }
             }
         }
